@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-find_package(Boost COMPONENTS random unit_test_framework thread REQUIRED)
+find_package(Boost COMPONENTS random unit_test_framework thread system REQUIRED)
 
 
 add_definitions(-pedantic -Wall -O2 -Wfatal-errors)
@@ -29,4 +29,5 @@ target_link_libraries(arena_benchmark
 	boost_arena
 	"${Boost_RANDOM_LIBRARY}"
 	"${Boost_THREAD_LIBRARY}"
+	"${Boost_SYSTEM_LIBRARY}"
 )
